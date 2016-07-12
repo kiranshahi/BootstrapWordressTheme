@@ -60,7 +60,7 @@
 
     <?php  endwhile;
         else :
-            echo '<h1>Opps! No content found.</h1>';
+            echo '<h1>Opps ! No result found.</h1>';
         endif;
 
         echo    "</div>";

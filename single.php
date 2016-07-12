@@ -60,18 +60,20 @@
 
 				<?php the_content(); ?>
 
+                
+                <?php  endwhile;
+
+                    else :
+                        echo '<p>No content found</p>';
+                    endif;
+
+                ?>
+
 			</div>
 		
 	
 				
 
-	<?php  endwhile;
-
-		else :
-			echo '<p>No content found</p>';
-		endif;
-
-	?>
 
 	<!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
