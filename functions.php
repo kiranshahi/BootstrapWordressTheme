@@ -62,9 +62,15 @@ function kiransTheme() {
 	//Add featured image support
 	add_theme_support('post-thumbnails');
 	add_image_size('banner-image', true);
+
+
+	//Add post format support
+	add_theme_support('post-formats', array('aside', 'gallery', 'link'));
 }
 
 add_action('after_setup_theme','kiransTheme');
+
+
 
 function wpt_register_js() {
 	wp_register_script('jquery.min', get_template_directory_uri() . '/resources/jquery/jquery.min.js', 'jquery');
@@ -90,3 +96,19 @@ function wpt_register_css() {
     wp_enqueue_style( 'font-awesome.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
+
+function ourWidgetsInit() {
+
+	register_sidebar( array(
+
+			'name'	=> 'Sidebar',
+			'id'	=> 'sidebar1',
+			'before_widget' => '<div class="well">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<h4>',
+			'after_title'	=> '</h4>'
+			
+		));
+}
+
+add_action('widgets_init', 'ourWidgetsInit');
